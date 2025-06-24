@@ -32,13 +32,15 @@ export default function Navbar() {
   return (
     <header className='bg-background border-b border-border shadow-sm px-6 sm:px-8 py-4 sticky top-0 z-50'>
       <div className='flex justify-between items-center gap-4 sm:gap-8 container mx-auto '>
-        <Image
-          src={logo.src}
-          alt='logo'
-          className='size-9'
-          width={48}
-          height={48}
-        />
+        <Link href={""}>
+          <Image
+            src={logo.src}
+            alt='logo'
+            className='size-9'
+            width={48}
+            height={48}
+          />
+        </Link>
         <NavigationMenu
           viewport={false}
           className='justify-center py-1.5 px-2 hidden lg:flex border border-border rounded-full'
