@@ -1,5 +1,5 @@
-// import { Twitter, Instagram, Youtube } from "lucide-react";
 import logo from "@/assets/Logo.png";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FaYoutube, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -8,7 +8,9 @@ export default function Footer() {
   return (
     <footer className='bg-primary/5 text-foreground py-12 2xl:py-16 px-6'>
       <div className='max-w-7xl mx-auto'>
-        <div className='flex items-start flex-wrap md:justify-between gap-7'>
+        <div
+          className={cn("flex items-start flex-wrap gap-7", "justify-between")}
+        >
           {/* Logo and Social Section */}
           <div className='max-md:flex items-center max-md:gap-6 md:space-y-5 max-md:w-full'>
             <div className='flex items-center space-x-3'>
@@ -149,24 +151,21 @@ export default function Footer() {
 
           {/* Resources Column */}
           <div className='space-y-4'>
-            <h3 className='text-white font-semibold text-base'>Resources</h3>
+            <h3 className='text-white font-semibold text-base'>
+              <span className='sm:block hidden'>Resource</span>
+              <span className='sm:hidden'>Tools</span>
+            </h3>
             <ul className='space-y-3'>
               <li>
                 <a
                   href='#'
                   className='text-foreground/70 hover:text-white transition-colors text-sm'
                 >
-                  Examples
+                  <span className='sm:block hidden'>Examples</span>
+                  <span className='sm:hidden'>Leads</span>
                 </a>
               </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Community
-                </a>
-              </li>
+
               <li>
                 <a
                   href='#'
