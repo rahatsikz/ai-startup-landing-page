@@ -51,19 +51,16 @@ export default function Navbar() {
               </NavigationMenuTrigger>
               <NavigationMenuContent className='!bg-background text-foreground border border-border rounded-md shadow-lg  lg:!top-11'>
                 <ul className='grid w-[500px] gap-2 p-4 sm:grid-cols-2'>
-                  <ListItem href='/features/analytics' title='Analytics'>
+                  <ListItem href='' title='Analytics'>
                     Powerful real-time metrics and insights.
                   </ListItem>
-                  <ListItem href='/features/automation' title='Automation'>
+                  <ListItem href='' title='Automation'>
                     Automate repetitive workflows easily.
                   </ListItem>
-                  <ListItem
-                    href='/features/collaboration'
-                    title='Collaboration'
-                  >
+                  <ListItem href='' title='Collaboration'>
                     Multi-user team features to improve teamwork.
                   </ListItem>
-                  <ListItem href='/features/security' title='Security'>
+                  <ListItem href='' title='Security'>
                     Enterprise-grade security and privacy features.
                   </ListItem>
                 </ul>
@@ -77,16 +74,16 @@ export default function Navbar() {
               </NavigationMenuTrigger>
               <NavigationMenuContent className='!bg-background text-foreground border border-border rounded-md shadow-lg lg:!top-11'>
                 <ul className='grid w-[500px] gap-2 p-4 sm:grid-cols-2'>
-                  <ListItem href='/developers/api' title='API Docs'>
+                  <ListItem href='' title='API Docs'>
                     Complete API documentation &amp; examples.
                   </ListItem>
-                  <ListItem href='/developers/sdks' title='SDKs'>
+                  <ListItem href='' title='SDKs'>
                     Download client SDKs for popular languages.
                   </ListItem>
-                  <ListItem href='/developers/community' title='Community'>
+                  <ListItem href='' title='Community'>
                     Join the developer community forums.
                   </ListItem>
-                  <ListItem href='/developers/changelog' title='Changelog'>
+                  <ListItem href='' title='Changelog'>
                     See the latest updates &amp; version history.
                   </ListItem>
                 </ul>
@@ -100,13 +97,13 @@ export default function Navbar() {
               </NavigationMenuTrigger>
               <NavigationMenuContent className='!bg-background text-foreground border border-border rounded-md shadow-lg lg:!top-11'>
                 <ul className='grid w-[400px] gap-2 p-4 sm:grid-cols-2'>
-                  <ListItem href='/company/about' title='About Us'>
+                  <ListItem href='' title='About Us'>
                     Our story, team, and values.
                   </ListItem>
-                  <ListItem href='/company/careers' title='Careers'>
+                  <ListItem href='' title='Careers'>
                     Join us — explore our job openings.
                   </ListItem>
-                  <ListItem href='/company/contact' title='Contact'>
+                  <ListItem href='' title='Contact'>
                     Get in touch with us.
                   </ListItem>
                 </ul>
@@ -122,7 +119,7 @@ export default function Navbar() {
                   "rounded-full xl:px-6"
                 )}
               >
-                <Link href='/blog'>Blog</Link>
+                <Link href=''>Blog</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
@@ -135,7 +132,7 @@ export default function Navbar() {
                   "rounded-full xl:px-6"
                 )}
               >
-                <Link href='/changelog'>Changelog</Link>
+                <Link href=''>Changelog</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
@@ -202,16 +199,16 @@ export function HamburgerMenu({
           <DropdownMenuSubTrigger>Features</DropdownMenuSubTrigger>
           <DropdownMenuSubContent sideOffset={13} className='w-48 '>
             <DropdownMenuItem asChild>
-              <Link href='/features/analytics'>Analytics</Link>
+              <Link href=''>Analytics</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href='/features/automation'>Automation</Link>
+              <Link href=''>Automation</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href='/features/collaboration'>Collaboration</Link>
+              <Link href=''>Collaboration</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href='/features/security'>Security</Link>
+              <Link href=''>Security</Link>
             </DropdownMenuItem>
           </DropdownMenuSubContent>
         </DropdownMenuSub>
@@ -221,13 +218,13 @@ export function HamburgerMenu({
           <DropdownMenuSubTrigger>Developers</DropdownMenuSubTrigger>
           <DropdownMenuSubContent sideOffset={13} className='w-48'>
             <DropdownMenuItem asChild>
-              <Link href='/developers/api'>API Docs</Link>
+              <Link href=''>API Docs</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href='/developers/sdks'>SDKs</Link>
+              <Link href=''>SDKs</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href='/developers/community'>Community</Link>
+              <Link href=''>Community</Link>
             </DropdownMenuItem>
           </DropdownMenuSubContent>
         </DropdownMenuSub>
@@ -237,23 +234,23 @@ export function HamburgerMenu({
           <DropdownMenuSubTrigger>Company</DropdownMenuSubTrigger>
           <DropdownMenuSubContent sideOffset={13} className='w-48'>
             <DropdownMenuItem asChild>
-              <Link href='/company/about'>About Us</Link>
+              <Link href=''>About Us</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href='/company/careers'>Careers</Link>
+              <Link href=''>Careers</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href='/company/contact'>Contact</Link>
+              <Link href=''>Contact</Link>
             </DropdownMenuItem>
           </DropdownMenuSubContent>
         </DropdownMenuSub>
 
         {/* Single links */}
         <DropdownMenuItem asChild className='mt-1'>
-          <Link href='/blog'>Blog</Link>
+          <Link href=''>Blog</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link href='/changelog'>Changelog</Link>
+          <Link href=''>Changelog</Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
