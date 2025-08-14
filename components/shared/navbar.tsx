@@ -1,5 +1,7 @@
 "use client";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { Menu } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -19,20 +21,39 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
-import React from "react";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { useNestedTranslations } from "@/hooks/use-safe-translation";
+import { Link } from "@/i18n/navigation";
 import logo from "@/assets/Logo.png";
-import Image from "next/image";
-import { Menu } from "lucide-react";
+
+// Common Nav Structure Keys
+const NAV_SECTIONS = [0, 1, 2] as const;
+const SINGLE_LINKS = [3, 4] as const;
 
 export default function Navbar() {
   const isTab = useMediaQuery("(max-width: 1024px)");
+  const [scrolled, setScrolled] = useState(false);
+
+  const tNavOptions = useNestedTranslations("navoptions");
+  const tNavActions = useNestedTranslations("navActionText");
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className='bg-background border-b border-border shadow-sm px-6 sm:px-8 py-4 sticky top-0 z-50'>
-      <div className='flex justify-between items-center gap-4 sm:gap-8 container mx-auto '>
-        <Link href={""}>
+    <header
+      className={cn(
+        "bg-background border-border shadow-sm px-6 sm:px-8 py-4 sticky top-0 z-50 transition-colors duration-500",
+        scrolled ? "border-b border-border" : "border-b-transparent"
+      )}
+    >
+      <div className='flex justify-between items-center gap-4 sm:gap-8 container mx-auto'>
+        {/* Logo */}
+        <Link href=''>
           <Image
             src={logo.src}
             alt='logo'
@@ -41,104 +62,64 @@ export default function Navbar() {
             height={48}
           />
         </Link>
+
+        {/* Desktop Navigation */}
         <NavigationMenu
           viewport={false}
           className='justify-center py-1.5 px-2 hidden lg:flex border border-border rounded-full'
         >
           <NavigationMenuList className='gap-8'>
-            {/* Features */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className='rounded-full xl:px-6'>
-                Features
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className='!bg-background text-foreground border border-border rounded-md shadow-lg  lg:!top-11'>
-                <ul className='grid w-[500px] gap-2 p-4 sm:grid-cols-2'>
-                  <ListItem href='' title='Analytics'>
-                    Powerful real-time metrics and insights.
-                  </ListItem>
-                  <ListItem href='' title='Automation'>
-                    Automate repetitive workflows easily.
-                  </ListItem>
-                  <ListItem href='' title='Collaboration'>
-                    Multi-user team features to improve teamwork.
-                  </ListItem>
-                  <ListItem href='' title='Security'>
-                    Enterprise-grade security and privacy features.
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+            {NAV_SECTIONS.map((sectionIndex) => (
+              <NavigationMenuItem key={sectionIndex}>
+                <NavigationMenuTrigger className='rounded-full xl:px-6'>
+                  {tNavOptions(`${sectionIndex}.trigger`)}
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className='!bg-background text-foreground border border-border rounded-md shadow-lg  lg:!top-11'>
+                  <ul
+                    className={cn(
+                      "grid gap-2 p-4",
+                      sectionIndex === 2
+                        ? "w-[400px] sm:grid-cols-2"
+                        : "w-[500px] sm:grid-cols-2"
+                    )}
+                  >
+                    {Array.from({
+                      length: sectionIndex === 2 ? 3 : 4, // Company has 3 items, others 4
+                    }).map((_, i) => (
+                      <ListItem
+                        key={i}
+                        href=''
+                        title={tNavOptions(
+                          `${sectionIndex}.children.${i}.title`
+                        )}
+                      >
+                        {tNavOptions(
+                          `${sectionIndex}.children.${i}.description`
+                        )}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            ))}
 
-            {/* Developers */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className='rounded-full xl:px-6'>
-                Developers
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className='!bg-background text-foreground border border-border rounded-md shadow-lg lg:!top-11'>
-                <ul className='grid w-[500px] gap-2 p-4 sm:grid-cols-2'>
-                  <ListItem href='' title='API Docs'>
-                    Complete API documentation &amp; examples.
-                  </ListItem>
-                  <ListItem href='' title='SDKs'>
-                    Download client SDKs for popular languages.
-                  </ListItem>
-                  <ListItem href='' title='Community'>
-                    Join the developer community forums.
-                  </ListItem>
-                  <ListItem href='' title='Changelog'>
-                    See the latest updates &amp; version history.
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            {/* Company */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className='rounded-full xl:px-6'>
-                Company
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className='!bg-background text-foreground border border-border rounded-md shadow-lg lg:!top-11'>
-                <ul className='grid w-[400px] gap-2 p-4 sm:grid-cols-2'>
-                  <ListItem href='' title='About Us'>
-                    Our story, team, and values.
-                  </ListItem>
-                  <ListItem href='' title='Careers'>
-                    Join us — explore our job openings.
-                  </ListItem>
-                  <ListItem href='' title='Contact'>
-                    Get in touch with us.
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            {/* Blog */}
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-                className={cn(
-                  navigationMenuTriggerStyle(),
-                  "rounded-full xl:px-6"
-                )}
-              >
-                <Link href=''>Blog</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-
-            {/* Changelog */}
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                asChild
-                className={cn(
-                  navigationMenuTriggerStyle(),
-                  "rounded-full xl:px-6"
-                )}
-              >
-                <Link href=''>Changelog</Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+            {SINGLE_LINKS.map((linkIndex) => (
+              <NavigationMenuItem key={linkIndex}>
+                <NavigationMenuLink
+                  asChild
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    "rounded-full xl:px-6"
+                  )}
+                >
+                  <Link href=''>{tNavOptions(`${linkIndex}.trigger`)}</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
           </NavigationMenuList>
         </NavigationMenu>
+
+        {/* Actions */}
         <div className='flex items-center gap-4'>
           <Button
             className='relative  text-white font-medium px-6 py-2 rounded-full  border border-[#9d6dff] shadow-[0_0_12px_2px_rgba(153,85,255,0.5)] transition hover:brightness-110'
@@ -152,7 +133,7 @@ export default function Navbar() {
                 0 0 10px rgba(153,85,255,0.6)`,
             }}
           >
-            Join waitlist
+            {tNavActions()}
           </Button>
 
           {isTab && <HamburgerMenu className='lg:hidden' />}
@@ -162,13 +143,12 @@ export default function Navbar() {
   );
 }
 
-// Reusable list item component
 function ListItem({
   title,
   children,
   href,
   ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+}: React.ComponentPropsWithoutRef<"li"> & { href: string; title: string }) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
@@ -184,9 +164,9 @@ function ListItem({
   );
 }
 
-export function HamburgerMenu({
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
+export function HamburgerMenu(props: React.HTMLAttributes<HTMLDivElement>) {
+  const tNavOptions = useNestedTranslations("navoptions");
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className={cn(props?.className)}>
@@ -195,65 +175,31 @@ export function HamburgerMenu({
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className='w-48 p-1'>
-        {/* Features Submenu */}
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Features</DropdownMenuSubTrigger>
-          <DropdownMenuSubContent sideOffset={13} className='w-48 '>
-            <DropdownMenuItem asChild>
-              <Link href=''>Analytics</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href=''>Automation</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href=''>Collaboration</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href=''>Security</Link>
-            </DropdownMenuItem>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
+      <DropdownMenuContent className='w-48 p-1 mr-2' sideOffset={10}>
+        {NAV_SECTIONS.map((sectionIndex) => (
+          <DropdownMenuSub key={sectionIndex}>
+            <DropdownMenuSubTrigger>
+              {tNavOptions(`${sectionIndex}.trigger`)}
+            </DropdownMenuSubTrigger>
+            <DropdownMenuSubContent sideOffset={13} className='w-48'>
+              {Array.from({
+                length: sectionIndex === 2 ? 3 : 4,
+              }).map((_, i) => (
+                <DropdownMenuItem asChild key={i}>
+                  <Link href=''>
+                    {tNavOptions(`${sectionIndex}.children.${i}.title`)}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuSubContent>
+          </DropdownMenuSub>
+        ))}
 
-        {/* Developers Submenu */}
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Developers</DropdownMenuSubTrigger>
-          <DropdownMenuSubContent sideOffset={13} className='w-48'>
-            <DropdownMenuItem asChild>
-              <Link href=''>API Docs</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href=''>SDKs</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href=''>Community</Link>
-            </DropdownMenuItem>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
-
-        {/* Company Submenu */}
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Company</DropdownMenuSubTrigger>
-          <DropdownMenuSubContent sideOffset={13} className='w-48'>
-            <DropdownMenuItem asChild>
-              <Link href=''>About Us</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href=''>Careers</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href=''>Contact</Link>
-            </DropdownMenuItem>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
-
-        {/* Single links */}
-        <DropdownMenuItem asChild className='mt-1'>
-          <Link href=''>Blog</Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link href=''>Changelog</Link>
-        </DropdownMenuItem>
+        {SINGLE_LINKS.map((linkIndex) => (
+          <DropdownMenuItem asChild key={linkIndex} className='mt-1'>
+            <Link href=''>{tNavOptions(`${linkIndex}.trigger`)}</Link>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

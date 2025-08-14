@@ -1,25 +1,28 @@
 import Image from "next/image";
 import { Badge } from "../ui/badge";
 import heroDesktopImg from "../../assets/hero-big.png";
+import { useNestedTranslations } from "@/hooks/use-safe-translation";
 
 export default function HeroSection() {
+  const t = useNestedTranslations("hero-section");
   return (
     <section className='min-h-[400px] py-10 flex flex-col items-center justify-center'>
       <Badge className='bg-background text-foreground border border-border pl-4 pr-5 rounded-full py-2'>
-        <Badge className='bg-primary text-foreground rounded-full'>New</Badge>
+        <Badge className='bg-primary text-foreground rounded-full'>
+          {t("bannerBadgeText")}
+        </Badge>
         <span className='ml-3 text-base text-primary tracking-wider capitalize'>
-          Latest integration just arrived
+          {t("bannerTitle")}
         </span>
       </Badge>
-      <h2 className='md:text-7xl text-5xl font-bold mt-8 max-w-2xl text-center capitalize leading-14 md:leading-19'>
-        Boost your{" "}
+      <h2 className='md:text-7xl text-5xl font-bold mt-8 max-w-2xl text-center capitalize leading-14 md:leading-22'>
+        {t("title1")} <br />
         <span className='bg-gradient-to-b from-[#fff] via-[#fff] to-[#B372CF] bg-clip-text text-transparent'>
-          rankings with AI
+          {t("title2")}
         </span>
       </h2>
       <p className='max-w-xl text-lg mt-5 tracking-wide text-center'>
-        Elevate your site&apos;s visibility effortlessly with AI, where smart
-        technology meets user-friendly SEO tools.
+        {t("description")}
       </p>
       <div className='relative max-w-4xl w-full mt-10'>
         <Image

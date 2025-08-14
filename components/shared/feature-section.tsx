@@ -2,14 +2,16 @@ import heroImg from "@/assets/hero-big.png";
 import reportImg from "@/assets/report.png";
 import visual1 from "@/assets/Visual.png";
 import visual2 from "@/assets/Visual2.png";
+import { useNestedTranslations } from "@/hooks/use-safe-translation";
 import Image from "next/image";
 
 export default function FeatureSection() {
+  const tHeader = useNestedTranslations("feature-section-header");
+  const t = useNestedTranslations("feature-row-texts");
   return (
     <section className='max-w-7xl w-full mx-auto pt-6 pb-20'>
       <h3 className='md:text-3xl text-xl font-bold text-center max-w-2xl text-pretty mx-auto tracking-wide md:leading-10'>
-        Harness the power of AI, making search engine optimization intuitive and
-        effective for all skill levels
+        {tHeader()}
       </h3>
       <div className='grid grid-cols-12 gap-5 lg:gap-x-5 lg:gap-y-6 mt-6 md:mt-10'>
         {/* 1st row */}
@@ -24,11 +26,10 @@ export default function FeatureSection() {
           />
           <div className='mt-2 md:mt-4'>
             <h4 className='text-xl font-semibold text-foreground capitalize'>
-              SEO goal setting
+              {t("0.title")}
             </h4>
             <p className='mt-1 text-foreground/70 text-sm md:text-pretty'>
-              Helps you set and achieve SEO goals with our most dedicated guided
-              assistance
+              {t("0.description")}
             </p>
           </div>
         </div>
@@ -48,11 +49,9 @@ export default function FeatureSection() {
             {/* Content */}
             <div className='absolute bottom-0 z-10 px-8 py-8 text-white max-w-md backdrop-blur-sm rounded-lg'>
               <h3 className='text-xl font-semibold capitalize'>
-                User friendly dashboard
+                {t("1.title")}
               </h3>
-              <p className='text-sm text-white/80 mt-1'>
-                Perform complex SEO audits and optimizations with a single click
-              </p>
+              <p className='text-sm text-white/80 mt-1'>{t("1.description")}</p>
             </div>
           </div>
         </div>
@@ -75,12 +74,9 @@ export default function FeatureSection() {
             {/* Content */}
             <div className='absolute bottom-0  z-10 px-8 py-[27px] text-white max-w-md backdrop-blur-sm rounded-lg'>
               <h3 className='text-xl font-semibold capitalize'>
-                Visual reports with charts
+                {t("2.title")}
               </h3>
-              <p className='text-sm text-white/80 mt-1'>
-                Visual insights into your site&#39;s performance with various
-                charts and graphs
-              </p>
+              <p className='text-sm text-white/80 mt-1'>{t("2.description")}</p>
             </div>
           </div>
         </div>
@@ -95,11 +91,10 @@ export default function FeatureSection() {
           />
           <div className='mt-2 md:mt-4'>
             <h4 className='text-xl font-semibold text-foreground'>
-              Smart Keyword Generator
+              {t("3.title")}
             </h4>
             <p className='mt-1 text-foreground/70 text-sm text-pretty'>
-              Automatic suggestions and the best keywords to target for better
-              results
+              {t("3.description")}
             </p>
           </div>
         </div>

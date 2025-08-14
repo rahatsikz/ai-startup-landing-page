@@ -1,10 +1,23 @@
 import logo from "@/assets/Logo.png";
+import { useNestedTranslations } from "@/hooks/use-safe-translation";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FaYoutube, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const tSiteInfo = useNestedTranslations("metadata");
+  const tFooter = useNestedTranslations("footer-options");
+  const rawT = useTranslations(); 
+
+  // Get footer-options as raw array from translations
+  const footerSections: Array<{
+    title: string;
+    shortTitle?: string;
+    "sub-pages": Array<{ title: string; "short-title"?: string }>;
+  }> = rawT.raw("footer-options");
+
   return (
     <footer className='bg-primary/5 text-foreground py-12 2xl:py-16 px-6'>
       <div className='max-w-7xl mx-auto'>
@@ -21,210 +34,78 @@ export default function Footer() {
                 width={48}
                 height={48}
               />
-              <span className='text-lg font-semibold'>AI Startup Website</span>
+              <span className='text-lg font-semibold'>
+                {tSiteInfo("title")}
+              </span>
             </div>
 
-            {/* Social Icons - positioned higher */}
             <div className='flex space-x-4'>
-              <a
-                href='#'
-                className='w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors'
-              >
-                <FaXTwitter className='w-4 h-4' />
-              </a>
-              <a
-                href='#'
-                className='w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors'
-              >
-                <FaInstagram className='w-4 h-4' />
-              </a>
-              <a
-                href='#'
-                className='w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors'
-              >
-                <FaYoutube className='w-4 h-4' />
-              </a>
+              <SocialIcon href='#' icon={<FaXTwitter className='w-4 h-4' />} />
+              <SocialIcon href='#' icon={<FaInstagram className='w-4 h-4' />} />
+              <SocialIcon href='#' icon={<FaYoutube className='w-4 h-4' />} />
             </div>
           </div>
 
-          {/* Product Column */}
-          <div className='space-y-4'>
-            <h3 className='text-foreground font-semibold text-base'>Product</h3>
-            <ul className='space-y-3'>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Integration
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Updates
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Pricing
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Dynamic Footer Columns */}
+          {footerSections.map((section, sectionIndex) => (
+            <div className='space-y-4' key={sectionIndex}>
+              <h3 className='text-foreground font-semibold text-base'>
+                {section.shortTitle ? (
+                  <>
+                    <span className='sm:block hidden'>
+                      {tFooter(`${sectionIndex}.title`)}
+                    </span>
+                    <span className='sm:hidden'>
+                      {tFooter(`${sectionIndex}.short-title`)}
+                    </span>
+                  </>
+                ) : (
+                  tFooter(`${sectionIndex}.title`)
+                )}
+              </h3>
 
-          {/* Company Column */}
-          <div className='space-y-4'>
-            <h3 className='text-white font-semibold text-base'>Company</h3>
-            <ul className='space-y-3'>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Manifesto
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Press
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Contract
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources Column */}
-          <div className='space-y-4'>
-            <h3 className='text-white font-semibold text-base'>
-              <span className='sm:block hidden'>Resource</span>
-              <span className='sm:hidden'>Tools</span>
-            </h3>
-            <ul className='space-y-3'>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  <span className='sm:block hidden'>Examples</span>
-                  <span className='sm:hidden'>Leads</span>
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Guides
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Docs
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Press
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal Column */}
-          <div className='space-y-4'>
-            <h3 className='text-white font-semibold text-base'>Legal</h3>
-            <ul className='space-y-3'>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Terms
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-foreground/70 hover:text-white transition-colors text-sm'
-                >
-                  Security
-                </a>
-              </li>
-            </ul>
-          </div>
+              <ul className='space-y-3'>
+                {section["sub-pages"].map((sub, subIndex) => (
+                  <li key={subIndex}>
+                    <a
+                      href='#'
+                      className='text-foreground/70 hover:text-white transition-colors text-sm'
+                    >
+                      {sub["short-title"] ? (
+                        <>
+                          <span className='sm:block hidden'>
+                            {tFooter(
+                              `${sectionIndex}.sub-pages.${subIndex}.title`
+                            )}
+                          </span>
+                          <span className='sm:hidden'>
+                            {tFooter(
+                              `${sectionIndex}.sub-pages.${subIndex}.short-title`
+                            )}
+                          </span>
+                        </>
+                      ) : (
+                        tFooter(`${sectionIndex}.sub-pages.${subIndex}.title`)
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </footer>
+  );
+}
+
+function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      className='w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors'
+    >
+      {icon}
+    </a>
   );
 }

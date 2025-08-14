@@ -7,6 +7,7 @@ import company6 from "@/assets/apex1.png";
 import company7 from "@/assets/cel1.png";
 import company8 from "@/assets/twice1.png";
 import Image from "next/image";
+import { useNestedTranslations } from "@/hooks/use-safe-translation";
 
 const images = [
   company1,
@@ -20,11 +21,10 @@ const images = [
 ];
 
 export default function Companies() {
+  const t = useNestedTranslations("company-section-header");
   return (
     <section className='max-w-7xl w-full mx-auto py-10 xl:py-20 '>
-      <h3 className='text-3xl font-bold text-center'>
-        Trusted by the world&#39;s most innovative teams
-      </h3>
+      <h3 className='text-3xl font-bold text-center'>{t()}</h3>
       <ul className='grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10'>
         {images.map((image, index) => (
           <li

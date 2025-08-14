@@ -1,0 +1,315 @@
+{
+    "metadata":{
+        "title":"Ai Startup Website",
+        "description":"created by rahat"
+    },
+    "navoptions":[
+        {
+            "trigger": "Features",
+            "children":[
+                {
+                    "title":"Analytics",
+                    "description":"Powerful real-time metrics and insights.",
+                    "href":""
+                },
+                {
+                    "title":"Automation",
+                    "description":"Automate repetitive workflows easily.",
+                    "href":""
+                },
+                {
+                    "title":"Collaboration",
+                    "description":"Multi-user team features to improve teamwork.",
+                    "href":""
+                },
+                {
+                    "title":"Security",
+                    "description":"Enterprise-grade security and privacy features.",
+                    "href":""
+                }
+            ]
+        },
+         {
+            "trigger": "Developers",
+            "children":[
+                {
+                    "title":"API Docs",
+                    "description":"Complete API documentation and examples.",
+                    "href":""
+                },
+                {
+                    "title":"SDKs",
+                    "description":"Download client SDKs for popular languages.",
+                    "href":""
+                },
+                {
+                    "title":"Community",
+                    "description":"Join the developer community forums.",
+                    "href":""
+                },
+                {
+                    "title":"Changelog",
+                    "description":"See the latest updates and version history.",
+                    "href":""
+                }
+            ]
+        },
+         {
+            "trigger": "Company",
+            "children":[
+                {
+                    "title":"About Us",
+                    "description":"Our story, team, and values.",
+                    "href":""
+                },
+                {
+                    "title":"Careers",
+                    "description":"Join us — explore our job openings.",
+                    "href":""
+                },
+                {
+                    "title":"Contact",
+                    "description":"Get in touch with us.",
+                    "href":""
+                }
+            ]
+        },
+        {
+            "trigger": "Blog",
+            "href": ""
+        },
+        {
+            "trigger": "Changelog",
+            "href": ""
+        }
+    ],
+    "navActionText": "Join waitlist",
+    "hero-section":{
+       "bannerBadgeText": "New",
+       "bannerTitle": " Latest integration just arrived",
+       "title1": "Boost your",
+       "title2": "rankings with AI",
+       "description": "Elevate your site's visibility effortlessly with AI, where smart technology meets user-friendly SEO tools."
+    },
+    "company-section-header": "Trusted by the world's most innovative teams",
+    "feature-section-header": " Harness the power of AI, making search engine optimization intuitive and effective for all skill levels",
+    "feature-row-texts":[
+        {
+            "title":"SEO goal setting",
+            "description":"Helps you set and achieve SEO goals with our most dedicated guided assistance"
+        },
+        {
+            "title":"User friendly dashboard",
+            "description":"Perform complex SEO audits and optimizations with a single click"
+        },
+         {
+            "title":"Visual reports with charts",
+            "description":"Visual insights into your site's performance with various charts and graphs"
+        },
+         {
+            "title":"Smart Keyword Generator",
+            "description":"Automatic suggestions and the best keywords to target for better results"
+        }
+    ],
+    "seo-section-header": "Elevate your SEO efforts with us",
+    "seo-row-texts":[
+        {
+        "title": "User-friendly dashboard",
+        "description":
+        "Perform complex SEO audits and optimizations with a single click."
+        },
+        {
+          "title": "Visual reports",
+          "description": "Visual insights into your site's performance and health."
+        },
+        {
+          "title": "Smart Keyword Generator",
+          "description": "Automatic suggestions and the best keywords to target."
+        },
+        {
+          "title": "Content evaluation",
+          "description": "Simple corrections for immediate improvements in content."
+        },
+        {
+          "title": "SEO goal setting",
+          "description": "Helps you set and achieve SEO goals with guided assistance."
+        },
+        {
+          "title": "Automated alerts",
+          "description":
+            "Automatic notifications about your SEO health, including quick fixes."
+        },
+        {
+          "title": "Link Optimization Wizard",
+          "description":
+            "Guides you through the process of creating and managing links."
+        },
+        {
+          "title": "One-click optimization",
+          "description":
+            "Perform complex SEO audits and optimizations with a single click."
+        },
+        {
+          "title": "Competitor reports",
+          "description":
+            "Provides insights into competitors' keyword strategies and ranking."
+        }
+    ],
+    "client-reviews-header": "Our clients",
+    "client-reviews-subheader": "Hear firsthand how our solutions have boosted online success for users like you.",
+    "client-reviews":[
+        {
+            "name": "Talia Taylor",
+            "role": "Digital Marketing Director @ Quantum",
+            "review": "This product has completely transformed how I manage my projects and deadlines"
+        }
+    ],
+    "pricings":[
+    {
+       "name": "Starter",
+       "price": "$29/mo",
+       "features": [
+         "Keyword optimization",
+         "Automated meta tags",
+         "SEO monitoring",
+         "Monthly reports"
+       ],
+       "highlighted": "false"
+     },
+    {
+      "name": "Pro",
+      "price": "$79/mo",
+      "features": [
+        "Keyword optimization",
+        "Automated meta tags",
+        "SEO monitoring",
+        "Monthly reports",
+        "Content suggestions",
+        "Link optimization"
+      ],
+      "highlighted": "true"
+    },
+    {
+      "name": "Business",
+      "price": "$149/mo",
+      "features": [
+        "Keyword optimization",
+        "Automated meta tags",
+        "SEO monitoring",
+        "Monthly reports",
+        "Content suggestions",
+        "Link optimization",
+        "Multi-user access",
+        "API integration"
+      ],
+      "highlighted": "false"
+    }
+    ],
+    "pricing-header": "Pricing",
+    "pricing-subheader": "Choose the right plan to meet your SEO needs and start optimizing today.",
+    "pricing-action": "Join waitlist",
+    "call-to-action-header": "AI-driven SEO optimization for everyone",
+    "call-to-action-input":{
+        "placeholder": "Your email",
+        "buttonText": "Join waitlist"
+    },
+    "call-to-action-footer": "No credit card required · 7-days free trial",
+    "footer-options":[
+        {
+            "title": "Product",
+            "sub-pages":[
+                {
+                    "title": "Features",
+                    "href": "#"
+                },
+                {
+                    "title": "Integrations",
+                    "href": "#"
+                },
+                {
+                    "title": "Updates",
+                    "href": "#"
+                },
+                {
+                    "title": "FAQ",
+                    "href": "#"
+                },
+                {
+                    "title": "Pricing",
+                    "href": "#"
+                }
+            ]
+        },
+         {
+            "title": "Company",
+            "sub-pages":[
+                {
+                    "title": "About",
+                    "href": "#"
+                },
+                {
+                    "title": "Blog",
+                    "href": "#"
+                },
+                {
+                    "title": "Careers",
+                    "href": "#"
+                },
+                {
+                    "title": "Manifesto",
+                    "href": "#"
+                },
+                {
+                    "title": "Press",
+                    "href": "#"
+                },
+                {
+                    "title": "Contact",
+                    "href": "#"
+                }
+            ]
+        },
+         {
+            "title": "Resources",
+            "short-title":"Tools",
+            "sub-pages":[
+                {
+                    "title": "Examples",
+                    "short-title": "Leads",
+                    "href": "#"
+                },
+                {
+                    "title": "Guides",
+                    "href": "#"
+                },
+                {
+                    "title": "Docs",
+                    "href": "#"
+                },
+                {
+                    "title": "Press",
+                    "href": "#"
+                }
+            ]
+        },
+         {
+            "title": "Legal",
+            "sub-pages":[
+                {
+                    "title": "Privacy",
+                    "href": "#"
+                },
+                {
+                    "title": "Terms",
+                    "href": "#"
+                },
+                {
+                    "title": "Security",
+                    "href": "#"
+                }
+            ]
+        }
+    ]
+
+    
+}

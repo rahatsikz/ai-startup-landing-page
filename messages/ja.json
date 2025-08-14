@@ -1,0 +1,308 @@
+{
+  "metadata": {
+    "title": "AIスタートアップ・ウェブサイト",
+    "description": "ラハト制作"
+  },
+  "navoptions": [
+    {
+      "trigger": "機能",
+      "children": [
+        {
+          "title": "アナリティクス",
+          "description": "強力なリアルタイム分析とインサイト。",
+          "href": ""
+        },
+        {
+          "title": "自動化",
+          "description": "繰り返しのワークフローを簡単に自動化。",
+          "href": ""
+        },
+        {
+          "title": "コラボレーション",
+          "description": "チームワークを強化するマルチユーザー機能。",
+          "href": ""
+        },
+        {
+          "title": "セキュリティ",
+          "description": "エンタープライズレベルのセキュリティとプライバシー機能。",
+          "href": ""
+        }
+      ]
+    },
+    {
+      "trigger": "開発者向け",
+      "children": [
+        {
+          "title": "APIドキュメント",
+          "description": "完全なAPIドキュメントと使用例。",
+          "href": ""
+        },
+        {
+          "title": "SDK",
+          "description": "人気言語用のクライアントSDKをダウンロード。",
+          "href": ""
+        },
+        {
+          "title": "コミュニティ",
+          "description": "開発者コミュニティフォーラムに参加。",
+          "href": ""
+        },
+        {
+          "title": "更新履歴",
+          "description": "最新のアップデートとバージョン履歴。",
+          "href": ""
+        }
+      ]
+    },
+    {
+      "trigger": "会社情報",
+      "children": [
+        {
+          "title": "私たちについて",
+          "description": "私たちのストーリー、チーム、価値観。",
+          "href": ""
+        },
+        {
+          "title": "採用情報",
+          "description": "私たちの仲間になりませんか — 募集中の職種を見る。",
+          "href": ""
+        },
+        {
+          "title": "お問い合わせ",
+          "description": "お気軽にご連絡ください。",
+          "href": ""
+        }
+      ]
+    },
+    {
+      "trigger": "ブログ",
+      "href": ""
+    },
+    {
+      "trigger": "更新履歴",
+      "href": ""
+    }
+  ],
+  "navActionText": "ウェイトリストに登録",
+  "hero-section": {
+    "bannerBadgeText": "新着",
+    "bannerTitle": "最新インテグレーション登場",
+    "title1": "AIで加速", 
+    "title2": "順位アップ",
+    "description": "AIでサイトの可視性をスマートに向上。直感的で使いやすいSEOツールを提供します。"
+  },
+  "company-section-header": "世界の革新的なチームに信頼されています",
+  "feature-section-header": "AIの力で、誰でも直感的かつ効果的にSEOを実現",
+  "feature-row-texts": [
+    {
+      "title": "SEO目標設定",
+      "description": "専任ガイドでSEO目標を設定・達成"
+    },
+    {
+      "title": "ユーザーフレンドリーなダッシュボード",
+      "description": "ワンクリックで複雑なSEO監査と最適化を実行"
+    },
+    {
+      "title": "チャート付きビジュアルレポート",
+      "description": "各種チャートやグラフでサイトのパフォーマンスを可視化"
+    },
+    {
+      "title": "スマートキーワードジェネレーター",
+      "description": "結果を高めるための自動キーワード提案"
+    }
+  ],
+  "seo-section-header": "私たちと一緒にSEOをレベルアップ",
+  "seo-row-texts": [
+    {
+      "title": "ユーザーフレンドリーなダッシュボード",
+      "description": "ワンクリックで複雑なSEO監査と最適化を実行。"
+    },
+    {
+      "title": "ビジュアルレポート",
+      "description": "サイトのパフォーマンスや健全性を可視化。"
+    },
+    {
+      "title": "スマートキーワードジェネレーター",
+      "description": "自動で最適なキーワードを提案。"
+    },
+    {
+      "title": "コンテンツ評価",
+      "description": "すぐ改善できるシンプルな修正案。"
+    },
+    {
+      "title": "SEO目標設定",
+      "description": "ガイド付きでSEO目標を設定・達成。"
+    },
+    {
+      "title": "自動アラート",
+      "description": "SEOの健康状態を自動通知、クイック修正も提案。"
+    },
+    {
+      "title": "リンク最適化ウィザード",
+      "description": "リンク作成と管理をガイド付きでサポート。"
+    },
+    {
+      "title": "ワンクリック最適化",
+      "description": "ワンクリックで複雑なSEO監査と最適化を実行。"
+    },
+    {
+      "title": "競合レポート",
+      "description": "競合のキーワード戦略と順位を分析。"
+    }
+  ],
+  "client-reviews-header": "お客様の声",
+  "client-reviews-subheader": "実際に私たちのソリューションで成功を手にしたユーザーの声をご紹介。",
+  "client-reviews": [
+    {
+      "name": "タリア・テイラー",
+      "role": "デジタルマーケティングディレクター @ Quantum",
+      "review": "このプロダクトでプロジェクトと締切の管理方法が劇的に変わりました"
+    }
+  ],
+  "pricings": [
+    {
+      "name": "スターター",
+      "price": "¥3,900/月",
+      "features": [
+        "キーワード最適化",
+        "自動メタタグ生成",
+        "SEOモニタリング",
+        "月次レポート"
+      ],
+      "highlighted": "false"
+    },
+    {
+      "name": "プロ",
+      "price": "¥10,900/月",
+      "features": [
+        "キーワード最適化",
+        "自動メタタグ生成",
+        "SEOモニタリング",
+        "月次レポート",
+        "コンテンツ提案",
+        "リンク最適化"
+      ],
+      "highlighted": "true"
+    },
+    {
+      "name": "ビジネス",
+      "price": "¥19,900/月",
+      "features": [
+        "キーワード最適化",
+        "自動メタタグ生成",
+        "SEOモニタリング",
+        "月次レポート",
+        "コンテンツ提案",
+        "リンク最適化",
+        "マルチユーザーアクセス",
+        "API連携"
+      ],
+      "highlighted": "false"
+    }
+  ],
+  "pricing-header": "料金プラン",
+  "pricing-subheader": "あなたのSEOニーズに合ったプランを選び、今日から最適化を開始しましょう。",
+  "pricing-action": "ウェイトリストに登録",
+  "call-to-action-header": "すべての人にAI駆動のSEO最適化を",
+  "call-to-action-input": {
+    "placeholder": "メールアドレス",
+    "buttonText": "ウェイトリストに登録"
+  },
+  "call-to-action-footer": "クレジットカード不要 · 7日間無料トライアル",
+  "footer-options": [
+    {
+      "title": "製品情報",
+      "sub-pages": [
+        {
+          "title": "機能",
+          "href": "#"
+        },
+        {
+          "title": "連携機能",
+          "href": "#"
+        },
+        {
+          "title": "更新情報",
+          "href": "#"
+        },
+        {
+          "title": "FAQ",
+          "href": "#"
+        },
+        {
+          "title": "料金プラン",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "title": "会社情報",
+      "sub-pages": [
+        {
+          "title": "私たちについて",
+          "href": "#"
+        },
+        {
+          "title": "ブログ",
+          "href": "#"
+        },
+        {
+          "title": "採用情報",
+          "href": "#"
+        },
+        {
+          "title": "ビジョン",
+          "href": "#"
+        },
+        {
+          "title": "プレス",
+          "href": "#"
+        },
+        {
+          "title": "お問い合わせ",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "title": "リソース",
+      "short-title": "ツール",
+      "sub-pages": [
+        {
+          "title": "事例",
+          "short-title": "リード",
+          "href": "#"
+        },
+        {
+          "title": "ガイド",
+          "href": "#"
+        },
+        {
+          "title": "ドキュメント",
+          "href": "#"
+        },
+        {
+          "title": "プレス",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "title": "法務情報",
+      "sub-pages": [
+        {
+          "title": "プライバシー",
+          "href": "#"
+        },
+        {
+          "title": "利用規約",
+          "href": "#"
+        },
+        {
+          "title": "セキュリティ",
+          "href": "#"
+        }
+      ]
+    }
+  ]
+}

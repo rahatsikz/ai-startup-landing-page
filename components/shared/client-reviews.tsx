@@ -1,14 +1,17 @@
 import clientImg1 from "@/assets/client1.png";
 import lineHorizontal from "@/assets/Line-horizontal.png";
 import lineVertical from "@/assets/Line-vertical.png";
+import { useNestedTranslations } from "@/hooks/use-safe-translation";
 import Image from "next/image";
 export default function ClientReviews() {
+  const tHeader = useNestedTranslations("client-reviews-header");
+  const tSubHeader = useNestedTranslations("client-reviews-subheader");
+  const tReview = useNestedTranslations("client-reviews");
   return (
     <section className='md:my-20 my-10 max-w-4xl mx-auto'>
-      <h3 className='text-3xl font-bold text-center capitalize'>Our clients</h3>
+      <h3 className='text-3xl font-bold text-center capitalize'>{tHeader()}</h3>
       <p className='text-center text-foreground/70 mt-2 max-w-xs text-pretty mx-auto'>
-        Hear firsthand how our solutions have boosted online success for users
-        like you.
+        {tSubHeader()}
       </p>
       <div className='md:mt-20 mt-8 relative'>
         <Image
@@ -86,14 +89,13 @@ export default function ClientReviews() {
           </div>
           <div className='w-full max-md:text-center'>
             <blockquote className='text-foreground text-pretty text-2xl font-semibold max-w-2xl'>
-              ”This product has completely transformed how I manage my projects
-              and deadlines”
+              ”{tReview("0.review")}”
             </blockquote>
             <p className='text-foreground/70 text-pretty text-sm mt-4'>
-              Talia Taylor
+              {tReview("0.name")}
             </p>
             <p className='text-foreground/70 text-pretty text-sm mt-0.5'>
-              Digital Marketing Director @ Quantum
+              {tReview("0.role")}
             </p>
           </div>
           <div className='w-20' />
