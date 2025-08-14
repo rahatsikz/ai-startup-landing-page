@@ -83,7 +83,7 @@
       "href": ""
     }
   ],
-  "navActionText": "ウェイトリストに登録",
+  "navActionText": "ウェイトリスト登録",
   "hero-section": {
     "bannerBadgeText": "新着",
     "bannerTitle": "最新インテグレーション登場",
@@ -202,11 +202,11 @@
   ],
   "pricing-header": "料金プラン",
   "pricing-subheader": "あなたのSEOニーズに合ったプランを選び、今日から最適化を開始しましょう。",
-  "pricing-action": "ウェイトリストに登録",
+  "pricing-action": "ウェイトリスト登録",
   "call-to-action-header": "すべての人にAI駆動のSEO最適化を",
   "call-to-action-input": {
     "placeholder": "メールアドレス",
-    "buttonText": "ウェイトリストに登録"
+    "buttonText": "登録"
   },
   "call-to-action-footer": "クレジットカード不要 · 7日間無料トライアル",
   "footer-options": [

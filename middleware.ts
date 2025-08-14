@@ -48,6 +48,9 @@ export default async function middleware(request: NextRequest) {
     const country = await getCountryFromIP(request);
     const preferredLocale = getPreferredLocale(country);
 
+    console.log("Detected country:", country);
+    console.log("Preferred locale:", preferredLocale);
+
     return NextResponse.redirect(new URL(`/${preferredLocale}`, request.url));
   }
 

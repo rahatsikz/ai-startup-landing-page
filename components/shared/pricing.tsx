@@ -8,6 +8,7 @@ export default function Pricing() {
   const tHeader = useNestedTranslations("pricing-header");
   const tSubHeader = useNestedTranslations("pricing-subheader");
   const tPricings = useNestedTranslations("pricings");
+  const tPricingAction = useNestedTranslations("pricing-action");
   const pricingsLength = en.pricings.length;
   return (
     <div className='lg:py-16 py-8'>
@@ -87,7 +88,7 @@ export default function Pricing() {
                   }`}
                   variant='ghost'
                 >
-                  Join waitlist
+                  {tPricingAction()}
                 </Button>
               </CardContent>
             </Card>
