@@ -26,6 +26,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { useNestedTranslations } from "@/hooks/use-safe-translation";
 import { Link } from "@/i18n/navigation";
 import logo from "@/assets/Logo.png";
+import { LanguageSwitcher } from "./language-switcher";
 
 // Common Nav Structure Keys
 const NAV_SECTIONS = [0, 1, 2] as const;
@@ -47,11 +48,11 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "bg-background border-border shadow-sm px-6 sm:px-8 py-4 sticky top-0 z-50 transition-colors duration-500",
+        " bg-background border-border shadow-sm px-6 sm:px-8 py-4 lg:py-[18px] sticky top-0 z-50 transition-colors duration-500",
         scrolled ? "border-b border-border" : "border-b-transparent"
       )}
     >
-      <div className='flex justify-between items-center gap-4 sm:gap-8 container mx-auto'>
+      <div className='flex justify-between  items-center gap-4 sm:gap-8 lg:max-xl:gap-0 container mx-auto max-w-7xl '>
         {/* Logo */}
         <Link href=''>
           <Image
@@ -66,7 +67,7 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <NavigationMenu
           viewport={false}
-          className='justify-center py-1.5 px-2 hidden lg:flex border border-border rounded-full'
+          className='justify-center py-1.5 px-2 hidden lg:flex border border-border rounded-full xl:absolute xl:left-[45%] xl:-translate-x-[45%] xl:top-3.5'
         >
           <NavigationMenuList className='gap-8'>
             {NAV_SECTIONS.map((sectionIndex) => (
@@ -121,6 +122,7 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className='flex items-center gap-4'>
+          <LanguageSwitcher />
           <Button
             className='relative  text-white font-medium px-6 py-2 rounded-full  border border-[#9d6dff] shadow-[0_0_12px_2px_rgba(153,85,255,0.5)] transition hover:brightness-110'
             size='lg'
